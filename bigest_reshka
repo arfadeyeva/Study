@@ -1,0 +1,23 @@
+#вычисляет сколько максимум раз подряд выпадала Решка (форма записи -РРРООР , где Р - решка, О - Орел)
+
+def bigest_reshka():
+    text = input()
+    text_length = len(text)
+    reshka = 0
+    biggest_reshka = 0
+    for i in range(text_length):
+        if text[i] == "Р":
+            reshka += 1
+        else:
+            if reshka > biggest_reshka:
+                biggest_reshka = reshka
+                reshka = 0
+            else:
+                reshka = 0
+    if reshka > biggest_reshka:
+        biggest_reshka = reshka
+
+    print(biggest_reshka)
+
+
+bigest_reshka()
